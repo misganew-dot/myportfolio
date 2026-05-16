@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,34 +6,47 @@
     <title>Projects | Misganew Fentahun</title>
     <link rel="stylesheet" href="mainstyle.css">
     <style>
+        /* ካርዶቹን ወደ ታች አንድ በአንድ ለመደርደር የተስተካከለ */
         .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
             margin-top: 20px;
+            max-width: 800px; /* በስክሪኑ ላይ በጣም እንዳይሰፋ ይገድበዋል */
         }
         .project-card {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid #3498db;
+            border-left: 5px solid #3498db; /* የነበረውን ወደ ግራ መስመር ቀይረነዋል ውበት እንዲኖረው */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .project-card h3 {
             margin-top: 0;
             color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 10px;
         }
         .project-card p {
             font-size: 15px;
             color: #555;
-            font-weight: normal !important;
+            line-height: 1.6;
         }
+        /* የ "View Code" ሊንክ ዲዛይን */
         .project-link {
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+            font-size: 14px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
+            transition: color 0.3s;
+        }
+        .project-link:hover {
+            color: #2980b9;
         }
     </style>
 </head>
@@ -46,50 +59,57 @@
     <div class="main-layout-container">
         
         <nav class="sidebar-nav">
-            <h3></h3>
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tara.html">MyHeritage</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
 
         <main class="content-area">
             <section class="content-section">
                 <h2>🚀 Projects & Achievements</h2>
                 
-                
-  <div class="project-card">
-    <h3>Task 1:Image Gallery</h3>
-    <p>A modern, stylish calculator designed with a beautiful glassmorphism theme, handling basic arithmetic and standard scientific operations.</p>
-    <a href="../Task2_calculater/index.html" style="background-color: #2c3e50; color: white; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 15px;">
-        Open Project &rarr;
-    </a>
-</div>
+                <div class="project-grid">
                     
-      <div class="project-card">
-    <h3>Task 1: Scientific Calculator</h3>
-    <p>An interactive and responsive image gallery with a clean grid layout and a full-screen lightbox view built during my CodeAlpha internship.</p>
-    <a href="../Task1_Image_Gallery/index.html" style="background-color: #2c3e50; color: white; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 14px; display: inline-block; margin-top: 15px;">
-        Open Project &rarr;
-    </a>
-</div>
-
-
                     <div class="project-card">
-                        <img src="AL.jpg" alt="AI Presentation" style="width:100%; border-radius:4px; margin-bottom:10px;">
-                        <h3>Artificial Intelligence Impact</h3>
-                        <p>A comprehensive research presentation prepared at Keradi Academy exploring the current state and ethical challenges of AI.</p>
+                        <div>
+                            <h3>Task 1: Image Gallery</h3>
+                            <p>An interactive and responsive image gallery with a clean grid layout and a full-screen lightbox view built during my CodeAlpha internship.</p>
+                        </div>
+                        <a class="project-link" href="https://github.com/misganew-dot/codealpha_tasks/tree/main/Task1_Image_Gallery" target="_blank">View Code &rarr;</a>
                     </div>
                     
                     <div class="project-card">
-                        <h3>Digital Skills Certification</h3>
-                        <p>Completed intensive skill-building training at Keradi Academy in collaboration with the Debark University CEED.</p>
+                        <div>
+                            <h3>Task 2: Scientific Calculator</h3>
+                            <p>A modern, stylish calculator designed with a beautiful glassmorphism theme, handling basic arithmetic and standard scientific operations.</p>
+                        </div>
+                        <a class="project-link" href="https://github.com/misganew-dot/codealpha_tasks/tree/main/Task2_calculater" target="_blank">View Code &rarr;</a>
                     </div>
+
+                    <div class="project-card">
+                        <div>
+                            <img src="AL.jpg" alt="AI Presentation" style="width:100%; max-width:400px; border-radius:4px; margin-bottom:10px; display:block;">
+                            <h3>Artificial Intelligence Impact</h3>
+                            <p>A comprehensive research presentation prepared at Keradi Academy exploring the current state and ethical challenges of AI.</p>
+                     </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div>
+                            <h3>Digital Skills Certification</h3>
+                            <p>Completed intensive skill-building training at Keradi Academy in collaboration with the Debark University CEED.</p>
+                        </div>
+                    </div>
+
                 </div>
-
             </section>
         </main>
 
-    </div>
-
-    <div style="text-align: center; margin: 30px 0;">
-        <a href="index.html" style="background-color: #2c3e50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">← ወደ ዋናው ተመለስ</a>
     </div>
 
     <footer>
