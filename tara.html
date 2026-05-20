@@ -114,6 +114,44 @@ header{
     padding: 20px;
     text-align: center;
 }
+/* ሙሉውን ሳጥን መካከለኛ የሚያደርግ */
+.next-project-container {
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* የመለያያ መስመሩ ዲዛይን */
+.project-separator {
+    width: 50%;
+    margin: 30px auto;
+    border: 1px dashed #ccc;
+}
+
+/* የጽሑፉ ስታይል */
+.project-prompt {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* የአረንጓዴው ቁልፍ (Button) ዲዛይን */
+.next-project-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #28a745;
+    color: white !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+}
+
+/* ማውሱ ቁልፉ ላይ ሲያርፍ የሚኖረው ለውጥ */
+.next-project-btn:hover {
+    background-color: #218838;
+}
     </style>
 </head>
 <body>
@@ -205,6 +243,11 @@ header{
         </div>
     </div>
 </section>
+<div class="next-project-container">
+    <hr class="project-separator">
+    <p class="project-prompt" style="color: blue;">የቀጣዩን ፕሮጀክት ይዘት ይመልከቱ፦</p>
+    <a href="book-viewer.html" class="next-project-btn">የኢትዮጵያ ታሪክ መጽሐፍን ያንብቡ</a>
+</div>
  <div style="text-align: center; margin: 50px 0;">
     <a href="index.html" style="
         background-color: #2d5a27; 

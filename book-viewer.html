@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የኢትዮጵያ ታሪክ መጽሐፍ ማናበቢያ</title>
+    <link rel="stylesheet" href="book-style.css">
+</head>
+<body>
+<div class="home-return-container">
+    <a href="index.html" class="back-to-home-btn">🏠 ወደ ዋናው ገጽ ተመለስ</a>
+</div>
+    <div class="container" id="registration-form">
+        <h2>የኢትዮጵያ ታሪክ መጽሐፍ</h2>
+        <p>እባክዎ መጽሐፉን ለማንበብ መረጃዎን ያስገቡ</p>
+        
+        <form id="user-info-form" action="https://formspree.io/f/maqkedqr" method="POST">
+            <input type="text" name="ስም" id="fullname" placeholder="ሙሉ ስም" required>
+            <input type="email" name="ኢሜይል" id="email" placeholder="ኢሜይል (Email)" required>
+            <input type="tel" name="ስልክ" id="phone" placeholder="የስልክ ቁጥር (Phone Number)" required>
+            <button type="submit">መጽሐፉን አንብብ</button>
+        </form>
+    </div>
+
+    <iframe id="pdf-viewer" src=""></iframe>
+
+    <script>
+        document.getElementById('user-info-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // ገጹ በራሱ ሪፍሬሽ እንዳያደርግ መከልከል
+
+            const form = e.target;
+            const data = new FormData(form);
+            const button = form.querySelector('button');
+            button.innerText = "በመላክ ላይ...";
+            button.disabled = true;
+
+            // መረጃውን ወደ Formspree (ወደ ኢሜይልህ) መላክ
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // መረጃው በተሳካ ሁኔታ ሲላክ ፎርሙን ደብቆ ፒዲኤፉን ማሳየት
+                    document.getElementById('registration-form').style.display = 'none';
+                    
+                    const pdfViewer = document.getElementById('pdf-viewer');
+                    pdfViewer.src = "EthiopianHistoryHarryAtkins.pdf"; // የፒዲኤፍ ፋይሉ ስም
+                    pdfViewer.style.display = 'block';
+                    document.body.style.display = 'block';
+                } else {
+                    alert("ችግር ተፈጥሯል፣ እባክዎ እንደገና ይሞክሩ።");
+                    button.innerText = "መጽሐፉን አንብብ";
+                    button.disabled = false;
+                }
+            }).catch(error => {
+                alert("የኢንተርኔት ግንኙነት ችግር አለ፣ እባክዎ እንደገና ይሞክሩ።");
+                button.innerText = "መጽሐፉን አንብብ";
+                button.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* መላውን ገጽ መካከለኛ ቦታ ላይ ለማድረግ እና ዳራውን ለማስተካከል */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* የፎርሙ መቀመጫ ሳጥን (ካርድ) ዲዛይን */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* የተጠቃሚ መረጃ መጻፊያ ሳጥኖች (Inputs) */
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* ተጠቃሚው መጻፊያ ሳጥኑ ላይ ጠቅ ሲያደርግ የሚኖረው ከለር */
+input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* የመጫኛ ቁልፍ (Button) ዲዛይን */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* መጽሐፉ (PDF) የሚታይበት ፍሬም (መጀመሪያ ላይ የተደበቀ ነው) */
+#pdf-viewer {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+/* መመለሻ ቁልፉን መሃል ላይ የሚያደርግ ሳጥን */
+.home-return-container {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+/* የመመለሻ ቁልፉ ራሱ ዲዛይን */
+.back-to-home-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #007bff; /* ሰማያዊ ቀለም */
+    color: white !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* ማውሱ ቁልፉ ላይ ሲያርፍ የሚኖረው ለውጥ */
+.back-to-home-btn:hover {
+    background-color: #0056b3; /* ጥቁር ያለ ሰማያዊ */
+    transform: translateY(-2px); /* ትንሽ ከፍ እንዲል */
+}
