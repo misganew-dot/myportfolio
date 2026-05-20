@@ -42,19 +42,21 @@
                     'Accept': 'application/json'
                 }
             }).then(response => {
-                if (response.ok) {
-                    // መረጃው በተሳካ ሁኔታ ሲላክ ፎርሙን ደብቆ ፒዲኤፉን ማሳየት
-                    document.getElementById('registration-form').style.display = 'none';
-                    
-                    const pdfViewer = document.getElementById('pdf-viewer');
-                    pdfViewer.src = "EthiopianHistoryHarryAtkins.pdf"; // የፒዲኤፍ ፋይሉ ስም
-                    pdfViewer.style.display = 'block';
-                    document.body.style.display = 'block';
-                } else {
-                    alert("ችግር ተፈጥሯል፣ እባክዎ እንደገና ይሞክሩ።");
-                    button.innerText = "መጽሐፉን አንብብ";
-                    button.disabled = false;
-                }
+                // በ book-viewer.html ውስጥ ያለውን የጃቫስክሪፕት 'if (response.ok)' ክፍል ብቻ በዚህ ቀይረው፦
+
+if (response.ok) {
+    // ፎርሙን መደበቅ
+    document.getElementById('registration-form').style.display = 'none';
+    
+    // የድረ-ገጽህን ቀጥታ አድራሻ ፈልጎ ማውጣት
+    const currentUrl = window.location.href.replace('book-viewer.html', '');
+    const pdfUrl = currentUrl + "EthiopianHistoryHarryAtkins.pdf";
+    
+    // በGoogle Docs Viewer አማካኝነት ፒዲኤፉን ዳውንሎድ ሳይሆን እዚያው እንዲከፈት ማስገደድ
+    const pdfViewer = document.getElementById('pdf-viewer');
+    pdfViewer.src = "https://docs.google.com/gview?url=" + encodeURIComponent(pdfUrl) + "&embedded=true";
+    pdfViewer.style.display = 'block';
+}
             }).catch(error => {
                 alert("የኢንተርኔት ግንኙነት ችግር አለ፣ እባክዎ እንደገና ይሞክሩ።");
                 button.innerText = "መጽሐፉን አንብብ";
